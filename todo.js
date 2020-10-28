@@ -14,7 +14,7 @@ $(function(){
         li.append(span);
         
         
-        let button = $("<button>Delete</button>");
+        let button = $("<button class='bin'>Delete</button>");
         button.click(event =>{
             //console.log("deleting");
             console.log(event.target);

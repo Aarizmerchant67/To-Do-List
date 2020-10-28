@@ -2,6 +2,7 @@ h1{
     font-family: 'Lobster', cursive;
     font-weight: 400px;
     text-align: center;
+    font-size: 3em;
 }
 
 body{
@@ -49,5 +50,9 @@ span{
 
 :checked + span{
         text-decoration: line-through;
+}
+
+.bin{
+    color: red;
 }
 

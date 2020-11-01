@@ -2,28 +2,32 @@ $(function(){
     $("#add").submit(event => {
         event.preventDefault();
         console.log(event);
-        console.log($(event.target));
+        console.log(event.target);
         let form = $(event.target);
-        let item = form.children("input").val();
-        let li = $("<li></li>");
+        let item = $("#adding").val();
+        console.log(item);
+        let li = $("<li class='row'></li>");
+        let col1 = $("<div class='col'></div>");
+        li.append(col1);
 
-        li.append("<input type='checkbox' />");
-
+        col1.append("<input type='checkbox' class='mr-2 mr-lg-3' />");
+        
         let span = $("<span></span>");
         span.text(item);
-        li.append(span);
+        col1.append(span);
+
+        let col2 = $("<div class='col-2'></div>");
+        li.append(col2);
         
-        
-        let button = $("<button class='bin'>Delete</button>");
-        button.click(event =>{
-            //console.log("deleting");
+        let button = $("<button class='delete w-100'>Delete</button>");
+        button.click(event => {
+            // console.log("deleting");
             console.log(event.target);
-            let toDelete = $(event.target).parent().remove();
-            console.log(toDelete);
+            $(event.target).parent().parent().remove();
         });
-        li.append(button);
+        col2.append(button);
         
         $("#list").append(li);
-        form.children("input").val("");
+        $("#adding").val("");
     });
 });

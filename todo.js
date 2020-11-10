@@ -108,6 +108,7 @@ $("#confirm-signup").click(event =>{
         $("#login-message").hide();
         $("#list").show();
         $("#add").show();
+        // $("#starter-text").hide();
 
         let ref = database.ref("/todo/" + user.uid);
         ref.on("child_added", function(snapshot){
@@ -135,6 +136,7 @@ $("#confirm-signup").click(event =>{
             $("#login-message").show();
             $("#list").hide().empty();
             $("#add").hide();
+            // $("#starter-text").show();
             let ref = database.ref("/todo/" + currentUser.uid);
             ref.off('child_added');
             ref.off('child_removed');
